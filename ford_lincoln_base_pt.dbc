@@ -162,6 +162,9 @@ BO_ 394 ACCDATA_3: 8 IPMA_ADAS
  SG_ AccTGap_D_Dsply : 34|3@0+ (1,0) [0|7] "SED"  GWM
  SG_ AccMemEnbl_B_RqDrv : 36|1@0+ (1,0) [0|1] "SED"  GWM
  SG_ FdaMem_B_Stat : 37|1@0+ (1,0) [0|1] "SED"  GWM
+ 
+BO_ 514 EngVehicleSpThrottle2: 8 PCM_HEV
+ SG_ Veh_V_ActlEng : 55|16@0+ (0.01,0) [0|655.35] "kph"  VDM,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
 
 BO_ 516 EngineData_14: 8 XXX
  SG_ ApedPosScal_Pc_Actl : 1|10@0+ (0.1,0) [0|0] "%" XXX
