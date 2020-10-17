@@ -69,7 +69,13 @@ BO_ 118 Steering_Wheel_Data_CG1: 8 XXX
  SG_ SteWhlRelInit2_An_Sns : 55|16@0+ (0.1,-3200.0) [0|0] "deg" XXX
  SG_ SteWhlAn_No_Cs : 39|8@0+ (1,0) [0|0] "" XXX
  SG_ SteWhlAn_No_Cnt : 47|4@0+ (1,0) [0|0] "Counts" XXX
-
+ 
+BO_ 119 BrakeSnData_3: 8 ABS_ESC
+ SG_ VehOverGnd_V_Est : 7|16@0+ (0.01,0) [0|655.33] "kph"  VDM,IPMA_ADAS,TCCM,PSCM,GWM
+ SG_ VehLongComp_A_Actl : 49|10@0+ (0.035,-17.9) [-17.9|17.835] "m/s^2"  VDM,ECM_Diesel,PCM,PCM_HEV,TCM_DSL,PSCM,GWM
+ SG_ VehLatComp_A_Actl : 43|10@0+ (0.035,-17.9) [-17.9|17.835] "m/s^2"  VDM,ECM_Diesel,PCM,PCM_HEV,TCM_DSL,PSCM,TCCM,GWM
+ SG_ VehYawComp_W_Actl : 19|12@0+ (0.03663,-75) [-75|74.92659] "deg/s"  VDM,TCCM,IPMA_ADAS,ECM_Diesel,PCM,PCM_HEV,TCM_DSL,PSCM,GWM
+ 
 BO_ 131 Steering_Buttons: 8 GWM
  SG_ Right_Turn_Light : 5|1@0+ (1,0) [0|0] "SED"  IPMA_ADAS,PSCM
  SG_ Left_Turn_Light : 4|1@0+ (1,0) [0|0] "SED"  IPMA_ADAS,PSCM
@@ -164,7 +170,12 @@ BO_ 394 ACCDATA_3: 8 IPMA_ADAS
  SG_ FdaMem_B_Stat : 37|1@0+ (1,0) [0|1] "SED"  GWM
  
 BO_ 514 EngVehicleSpThrottle2: 8 PCM_HEV
+ SG_ VehVTrlrAid_B_Avail : 23|1@0+ (1,0) [0|1] "SED"  PSCM,GWM
+ SG_ VehVActlEng_No_Cs : 15|8@0+ (1,0) [0|255] "Unitless"  PSCM,GWM
+ SG_ VehVActlEng_No_Cnt : 22|4@0+ (1,0) [0|15] "Unitless"  PSCM,GWM
+ SG_ VehVActlEng_D_Qf : 38|2@0+ (1,0) [0|3] "SED"  VDM,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
  SG_ Veh_V_ActlEng : 55|16@0+ (0.01,0) [0|655.35] "kph"  VDM,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
+ SG_ GearRvrse_D_Actl : 4|3@0+ (1,0) [0|7] "SED"  CMR_DSMC,IPMA_ADAS,ABS_ESC,PSCM,GWM
 
 BO_ 516 EngineData_14: 8 XXX
  SG_ ApedPosScal_Pc_Actl : 1|10@0+ (0.1,0) [0|0] "%" XXX
@@ -354,7 +365,13 @@ BO_ 985 IPMA_Data2: 8 IPMA_ADAS
  SG_ AdbDrvSide_B_Stat : 35|1@0+ (1,0) [0|1] "SED"  GWM
  
 BO_ 1045 BrakeSysFeatures: 8 ABS_ESC
+ SG_ VehStab_D_Stat : 55|4@0+ (1,0) [0|15] "SED"  TCCM,PCM_HEV,PCM,GWM
  SG_ BrkFluidLvl_D_Stat : 17|2@0+ (1,0) [0|3] "SED"  GWM
+ SG_ LsmcBrkDecel_D_Stat : 39|3@0+ (1,0) [0|7] "SED"  PSCM,GWM
+ SG_ VehVActlBrk_No_Cs : 31|8@0+ (1,0) [0|255] "Unitless"  TCCM,CMR_DSMC,SOBDMC_HPCM_FD1,ECM_Diesel,PCM,PCM_HEV,PSCM,TCM_DSL,GWM,IPMA_ADAS
+ SG_ Veh_V_ActlBrk : 7|16@0+ (0.01,0) [0|655.35] "kph"  TCCM,CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ECM_Diesel,PCM,PCM_HEV,PSCM,TCM_DSL,GWM
+ SG_ VehVActlBrk_No_Cnt : 21|4@0+ (1,0) [0|15] "Unitless"  TCCM,CMR_DSMC,SOBDMC_HPCM_FD1,ECM_Diesel,PCM,PCM_HEV,PSCM,TCM_DSL,GWM,IPMA_ADAS
+ SG_ VehVActlBrk_D_Qf : 23|2@0+ (1,0) [0|3] "SED"  TCCM,CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ECM_Diesel,PCM,PCM_HEV,PSCM,TCM_DSL,GWM
  
 
 CM_ SG_ 970 Lkas_Action "only vals 4, 5, 8, 9 seem to work. 4 and 5 are a bit smoother" ;
@@ -370,6 +387,10 @@ VAL_ 76 RstrnImpactEvntStatus 7 "Invalid" 6 "Not_Used_4" 5 "Threshold_2_Exceeded
 VAL_ 76 PsngrFrntDetct_D_Actl 3 "Unknown" 2 "Empty" 0 "Faulty" 1 "Occupied" ;
 VAL_ 76 EDRTriggerEvntSync 1 "Threshold_Exceeded" 0 "Normal" ;
 VAL_ 76 PassRstrnInd_Req 3 "ABOnNotIllum_OffNotIllum" 2 "AirbagOnNot_Illum_OffIllum" 1 "AirbagOn_Illum_OffNotIllum" 0 "AirbagOn_Illum_Off_Illum" ;
+VAL_ 119 VehOverGnd_V_Est 65535 "Invalid" 65534 "Unknown" ;
+VAL_ 119 VehLongComp_A_Actl 1023 "Fault" 1022 "NoDataExists" ;
+VAL_ 119 VehLatComp_A_Actl 1023 "Fault" 1022 "NoDataExists" ;
+VAL_ 119 VehYawComp_W_Actl 4095 "Fault" 4094 "NoDataExists" ;
 VAL_ 130 TrlrHitchLamp_D_Rqst 1 "On" 0 "Off" ;
 VAL_ 130 VehVTrlrAid_B_Rq 1 "Request" 0 "NoRequest" ;
 VAL_ 130 DrvSteActv_B_Stat 1 "Active" 0 "Inactive" ;
@@ -447,6 +468,9 @@ VAL_ 394 FcwAudioWarn_B_Rq 1 "On" 0 "Off" ;
 VAL_ 394 AccTGap_D_Dsply 7 "Undefined_2" 6 "Undefined_1" 5 "Time_Gap_5" 4 "Time_Gap_4" 3 "Time_Gap_3" 2 "Time_Gap_2" 1 "Time_Gap_1" 0 "Not_Used" ;
 VAL_ 394 AccMemEnbl_B_RqDrv 1 "Adaptive_Cruise" 0 "Normal_Cruise" ;
 VAL_ 394 FdaMem_B_Stat 1 "On" 0 "Off" ;
+VAL_ 514 VehVTrlrAid_B_Avail 1 "Yes" 0 "No" ;
+VAL_ 514 VehVActlEng_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
+VAL_ 514 GearRvrse_D_Actl 7 "Fault" 6 "NotUsed_3" 5 "NotUsed_2" 4 "NotUsed_1" 3 "Active_confirmed" 2 "Active_not_confirmed" 1 "Inactive_confirmed" 0 "Inactive_not_confirmed" ;
 VAL_ 531 VehStop_D_Stat 3 "Faulty" 2 "NoDataExists" 1 "Yes" 0 "No" ;
 VAL_ 531 TracCtlPtActv_B_Actl 1 "Active" 0 "Inactive" ;
 VAL_ 531 LscmbbMntr_B_Err 1 "DisplayMessage" 0 "NoMessage" ;
@@ -572,4 +596,7 @@ VAL_ 985 IsaVLimUnit_D_Rq 3 "NoDataExists" 2 "Mph" 1 "Kph" 0 "Null" ;
 VAL_ 985 AdbDividedRoad_B_Stat 1 "Yes" 0 "No" ;
 VAL_ 985 LcwaMsgTxt_D_Stat 3 "SodXFaulty" 2 "SodXBlocked" 1 "TrailerConnected" 0 "NoMessage" ;
 VAL_ 985 AdbDrvSide_B_Stat 1 "Left_Hand_Traffic" 0 "Right_Hand_Traffic" ;
+VAL_ 1045 VehStab_D_Stat 15 "Faulty" 14 "No_Data_Exists" 13 "NotUsed6" 12 "NotUsed5" 11 "NotUsed4" 10 "NotUsed3" 9 "NotUsed2" 8 "NotUsed1" 7 "High_SSRA_no_OS" 6 "Straight" 5 "Post_Oversteer" 4 "Post_Transition" 3 "Countersteer" 2 "Understeer" 1 "Oversteer" 0 "Linear" ;
 VAL_ 1045 BrkFluidLvl_D_Stat 3 "Invalid" 2 "Unknown" 1 "Low" 0 "OK" ;
+VAL_ 1045 LsmcBrkDecel_D_Stat 7 "NotUsed_3" 6 "NotUsed_2" 5 "NotUsed_1" 4 "Denied" 3 "FaultDegraded" 2 "FaultExt" 1 "On" 0 "Off" ;
+VAL_ 1045 VehVActlBrk_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
