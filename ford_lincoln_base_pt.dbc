@@ -455,7 +455,7 @@ VAL_ 146 VehLatAActl_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists
 VAL_ 357 BPedDrvAppl_D_QF 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
 VAL_ 357 CmbbDeny_B_ActlPrpl 1 "Yes" 0 "No" ;
 VAL_ 357 PrplTqMnSat_B_Actl 1 "Yes" 0 "No" ;
-VAL_ 357 BpedDrvAppl_D_Actl 3 "_Not_Allowed" 2 "Driver_Braking" 1 "Driver_Not_Braking" 0 "Not_Allowed" ;
+VAL_ 357 Brake_Drv_Appl 3 "_Not_Allowed" 2 "Driver_Braking" 1 "Driver_Not_Braking" 0 "Not_Allowed" ;
 VAL_ 357 CmbbEngTqMn_B_Actl 1 "Yes" 0 "No" ;
 VAL_ 357 Veh_V_DsplyCcSet 255 "Fault" 254 "Unknown" ;
 VAL_ 357 AccEngStat_D_Actl 7 "Undefined_2" 6 "Undefined_1" 5 "ACCSoonCancel_due_Low_Spd" 4 "Shift_Down_Recommendation" 3 "Shift_Up_Recommendation" 2 "ACCNotAllowedToBeActivated" 1 "ACCStandby_due_Auto_Cancel" 0 "Normal_Operation" ;
