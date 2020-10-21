@@ -103,11 +103,20 @@ BO_ 146 Accel_Data: 8 GWM
  SG_ VehLat_A_Actl : 4|13@0+ (0.01,-40) [-40|41.89] "m/s^2"  VDM,TCCM,ABS_ESC,ECM_Diesel,IPMA_ADAS
  SG_ VehLatLongVertA_No_Cs : 55|8@0+ (1,0) [0|255] "Unitless"  TCCM,IPMA_ADAS,ABS_ESC
  SG_ VehLatLongVert_No_Cnt : 63|8@0+ (1,0) [0|255] "Unitless"  VDM,TCCM,IPMA_ADAS,ABS_ESC
-
-BO_ 357 Cruise_Status: 8 XXX
- SG_ Brake_Drv_Appl : 5|1@0+ (1,0) [0|0] "" XXX
- SG_ Cruise_State : 11|4@0+ (1,0) [0|0] "" XXX
- SG_ Set_Speed : 23|8@0+ (1,0) [0|0] "" XXX
+ 
+BO_ 357 EngBrakeData: 8 PCM_HEV
+ SG_ BPedDrvAppl_D_QF : 15|2@0+ (1,0) [0|3] "SED"  CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
+ SG_ CmbbDeny_B_ActlPrpl : 3|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
+ SG_ PrplTqMnSat_B_Actl : 41|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
+ SG_ Brake_Drv_Appl : 5|2@0+ (1,0) [0|3] "SED"  CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCCM,TCM_DSL,GWM
+ SG_ CmbbEngTqMn_B_Actl : 7|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
+ SG_ Set_Speed : 23|8@0+ (1,0) [0|253] "Unitless"  GWM,IPMA_ADAS
+ SG_ AccEngStat_D_Actl : 2|3@0+ (1,0) [0|7] "SED"  IPMA_ADAS,GWM
+ SG_ CcMde_D_Actl : 13|3@0+ (1,0) [0|7] "SED"  VDM,TCM_DSL,ABS_ESC,GWM
+ SG_ Cruise_State : 10|3@0+ (1,0) [0|7] "SED"  CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,TCCM,TCM_DSL,GWM
+ SG_ EngAout_N_MnAllw : 52|13@0+ (2,0) [0|16382] "rpm"  SOBDMC_HPCM_FD1,GWM
+ SG_ CcOvrrdActv_B_Actl : 6|1@0+ (1,0) [0|1] "SED"  VDM,IPMA_ADAS,ABS_ESC,TCCM,TCM_DSL,GWM
+ SG_ AccStopMde_D_Rq : 39|2@0+ (1,0) [0|3] "SED"  IPMA_ADAS,ABS_ESC,GWM
  
 BO_ 390 ACCDATA: 8 IPMA_ADAS
  SG_ AccBrkPulse_B_Rq : 36|1@0+ (1,0) [0|1] "SED"  ABS_ESC,GWM
@@ -423,7 +432,17 @@ VAL_ 146 Lat_A_Actl 8191 "Faulty" 8190 "NoDataExists" ;
 VAL_ 146 VehVertAActl_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
 VAL_ 146 VehLongAActl_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
 VAL_ 146 VehLatAActl_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
-VAL_ 357 Cruise_State 4 "active" 3 "standby" 0 "off" ;
+VAL_ 357 BPedDrvAppl_D_QF 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
+VAL_ 357 CmbbDeny_B_ActlPrpl 1 "Yes" 0 "No" ;
+VAL_ 357 PrplTqMnSat_B_Actl 1 "Yes" 0 "No" ;
+VAL_ 357 BpedDrvAppl_D_Actl 3 "_Not_Allowed" 2 "Driver_Braking" 1 "Driver_Not_Braking" 0 "Not_Allowed" ;
+VAL_ 357 CmbbEngTqMn_B_Actl 1 "Yes" 0 "No" ;
+VAL_ 357 Veh_V_DsplyCcSet 255 "Fault" 254 "Unknown" ;
+VAL_ 357 AccEngStat_D_Actl 7 "Undefined_2" 6 "Undefined_1" 5 "ACCSoonCancel_due_Low_Spd" 4 "Shift_Down_Recommendation" 3 "Shift_Up_Recommendation" 2 "ACCNotAllowedToBeActivated" 1 "ACCStandby_due_Auto_Cancel" 0 "Normal_Operation" ;
+VAL_ 357 CcMde_D_Actl 7 "TapDownWaiting" 6 "TapUpWaiting" 5 "Resuming_Low" 4 "Resuming_High" 3 "Decelerating" 2 "Accelerating" 1 "Keeping_Speed" 0 "Not_Active" ;
+VAL_ 357 Cruise_State 7 "Undefined_2" 6 "Undefined_1" 5 "Active" 4 "Active_Que_Assist" 3 "Standby" 2 "Standby_Denied" 1 "Denied" 0 "Off" ;
+VAL_ 357 CcOvrrdActv_B_Actl 1 "Cruise_Overridden" 0 "Cruise_Req_Not_Overridden" ;
+VAL_ 357 AccStopMde_D_Rq 3 "Stop_Mode_Active" 2 "EPBApplyOrBrakeReleaseWarn" 1 "Limit_Rolling_Speed" 0 "Stop_Mode_Not_Active" ;
 VAL_ 390 AccBrkPulse_B_Rq 1 "True" 0 "False" ;
 VAL_ 390 AccAutoResum_D_Rq 3 "NotUsed" 2 "Active" 1 "Pending" 0 "Off" ;
 VAL_ 390 AccBrkPrkEl_B_Rq 1 "Yes" 0 "No" ;
