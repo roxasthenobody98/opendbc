@@ -104,7 +104,7 @@ BO_ 146 Accel_Data: 8 GWM
  SG_ VehLatLongVertA_No_Cs : 55|8@0+ (1,0) [0|255] "Unitless"  TCCM,IPMA_ADAS,ABS_ESC
  SG_ VehLatLongVert_No_Cnt : 63|8@0+ (1,0) [0|255] "Unitless"  VDM,TCCM,IPMA_ADAS,ABS_ESC
  
-BO_ 357 EngBrakeData: 8 PCM_HEV
+BO_ 357 Cruise_Status: 8 PCM_HEV
  SG_ BPedDrvAppl_D_QF : 15|2@0+ (1,0) [0|3] "SED"  CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
  SG_ CmbbDeny_B_ActlPrpl : 3|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
  SG_ PrplTqMnSat_B_Actl : 41|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
