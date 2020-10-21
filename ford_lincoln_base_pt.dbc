@@ -104,6 +104,19 @@ BO_ 146 Accel_Data: 8 GWM
  SG_ VehLatLongVertA_No_Cs : 55|8@0+ (1,0) [0|255] "Unitless"  TCCM,IPMA_ADAS,ABS_ESC
  SG_ VehLatLongVert_No_Cnt : 63|8@0+ (1,0) [0|255] "Unitless"  VDM,TCCM,IPMA_ADAS,ABS_ESC
  
+BO_ 376 EngineClimateData: 8 PCM_HEV
+ SG_ GasPrtc_D_RqDsply : 22|3@0+ (1,0) [0|7] "SED"  GWM
+ SG_ EngAout_Aa_Actl : 17|10@0+ (0.05,-25.6) [-25.6|25.55] "rpm/ms"  ABS_ESC,GWM
+ SG_ DynoMde_B_Cmd : 4|1@0+ (1,0) [0|1] "SED"  TCM_DSL,ABS_ESC,GWM
+ SG_ AslIconDsply_D_Rq : 3|2@0+ (1,0) [0|3] "SED"  GWM
+ SG_ AslChime_B_Rq : 39|1@0+ (1,0) [0|1] "SED"  GWM
+ SG_ HvacHtrCore2_Te_Actl : 1|10@0+ (0.25,-50) [-50|205.5] "degC"  SOBDMC_HPCM_FD1,GWM
+ SG_ EcssLamp_D_RqDsply : 19|2@0+ (1,0) [0|3] "SED"  GWM
+ SG_ AirAmbTe_D_Qf : 35|2@0+ (1,0) [0|3] "SED"  SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,TCCM,GWM
+ SG_ AirAmb_Te_ActlFilt : 49|10@0+ (0.25,-128) [-128|127.75] "deg C"  SOBDMC_HPCM_FD1,IPMA_ADAS,GWM
+ SG_ AirAmb_Te_Actl : 33|10@0+ (0.25,-128) [-128|127.75] "degC"  ABS_ESC,TCCM,GWM
+ SG_ AirAmb_P_Actl : 55|6@0+ (10,500) [500|1110] "mbar"  ABS_ESC,TCM_DSL,GWM
+ 
 BO_ 357 Cruise_Status: 8 PCM_HEV
  SG_ BPedDrvAppl_D_QF : 15|2@0+ (1,0) [0|3] "SED"  CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
  SG_ CmbbDeny_B_ActlPrpl : 3|1@0+ (1,0) [0|1] "SED"  IPMA_ADAS,GWM
@@ -186,8 +199,15 @@ BO_ 514 EngVehicleSpThrottle2: 8 PCM_HEV
  SG_ Veh_V_ActlEng : 55|16@0+ (0.01,0) [0|655.35] "kph"  VDM,SOBDMC_HPCM_FD1,IPMA_ADAS,ABS_ESC,PSCM,TCM_DSL,GWM
  SG_ GearRvrse_D_Actl : 4|3@0+ (1,0) [0|7] "SED"  CMR_DSMC,IPMA_ADAS,ABS_ESC,PSCM,GWM
 
-BO_ 516 EngineData_14: 8 XXX
- SG_ ApedPosScal_Pc_Actl : 1|10@0+ (0.1,0) [0|0] "%" XXX
+BO_ 516 EngineData_14: 8 PCM_HEV
+ SG_ EngAoutNActl_D_QF : 31|2@0+ (1,0) [0|3] "SED"  TCM_DSL,GWM
+ SG_ EngAout3_N_Actl : 55|16@0+ (0.25,0) [0|16383.5] "RPM"  SOBDMC_HPCM_FD1,GWM
+ SG_ ApedPos_PcRate_ActlArb : 23|8@0+ (0.04,-5) [-5|5.12] "%/ms"  TCM_DSL,GWM
+ SG_ ApedPosScal_Pc_Actl : 1|10@0+ (0.1,0) [0|102.3] "%"  VDM,CMR_DSMC,SOBDMC_HPCM_FD1,IPMA_ADAS,TCCM,ABS_ESC,PSCM,TCM_DSL,GWM
+ SG_ ApedPosPcActl_D_Qf : 7|2@0+ (1,0) [0|3] "SED"  VDM,CMR_DSMC,IPMA_ADAS,SOBDMC_HPCM_FD1,ABS_ESC,PSCM,TCM_DSL,GWM
+ SG_ EngAout_N_Actl : 28|13@0+ (2,0) [0|16382] "rpm"  VDM,ABS_ESC,PSCM,TCCM,TCM_DSL,GWM
+ SG_ ApedPosPcActl_No_Cnt : 5|4@0+ (1,0) [0|15] "Unitless"  ABS_ESC,SOBDMC_HPCM_FD1,GWM
+ SG_ ApedPosPcActl_No_Cs : 47|8@0+ (1,0) [0|255] "Unitless"  ABS_ESC,SOBDMC_HPCM_FD1,GWM
 
 BO_ 531 DesiredTorqBrk: 8 ABS_ESC
  SG_ VehStop_D_Stat : 28|2@0+ (1,0) [0|3] "SED"  IPMA_ADAS,GWM
@@ -490,6 +510,10 @@ VAL_ 394 FdaMem_B_Stat 1 "On" 0 "Off" ;
 VAL_ 514 VehVTrlrAid_B_Avail 1 "Yes" 0 "No" ;
 VAL_ 514 VehVActlEng_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
 VAL_ 514 GearRvrse_D_Actl 7 "Fault" 6 "NotUsed_3" 5 "NotUsed_2" 4 "NotUsed_1" 3 "Active_confirmed" 2 "Active_not_confirmed" 1 "Inactive_confirmed" 0 "Inactive_not_confirmed" ;
+VAL_ 516 EngAoutNActl_D_QF 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
+VAL_ 516 EngAout3_N_Actl 65535 "Invalid" ;
+VAL_ 516 ApedPos_PcRate_ActlArb 255 "Fault" 254 "Unknown" ;
+VAL_ 516 ApedPosPcActl_D_Qf 3 "OK" 2 "Not_Within_Specifications" 1 "No_Data_Exists" 0 "Faulty" ;
 VAL_ 531 VehStop_D_Stat 3 "Faulty" 2 "NoDataExists" 1 "Yes" 0 "No" ;
 VAL_ 531 TracCtlPtActv_B_Actl 1 "Active" 0 "Inactive" ;
 VAL_ 531 LscmbbMntr_B_Err 1 "DisplayMessage" 0 "NoMessage" ;
