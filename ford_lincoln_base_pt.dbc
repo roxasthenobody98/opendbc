@@ -63,12 +63,18 @@ BO_ 130 EPAS_INFO: 8 PSCM
  SG_ SAPPAngleControlStat2 : 11|1@0+ (1,0) [0|1] "SED"  GWM,IPMA_ADAS
  SG_ SAPPAngleControlStat1 : 23|2@0+ (1,0) [0|3] "SED"  GWM,IPMA_ADAS
 
-BO_ 118 Steering_Wheel_Data_CG1: 8 XXX
- SG_ SteWhlRelInit_An_Sns : 6|15@0+ (0.1,-1600.0) [0|0] "deg" XXX
- SG_ SteWhlRelCalib_An_Sns : 23|15@0+ (0.1,-1600.0) [0|0] "deg" XXX
- SG_ SteWhlRelInit2_An_Sns : 55|16@0+ (0.1,-3200.0) [0|0] "deg" XXX
- SG_ SteWhlAn_No_Cs : 39|8@0+ (1,0) [0|0] "" XXX
- SG_ SteWhlAn_No_Cnt : 47|4@0+ (1,0) [0|0] "Counts" XXX
+BO_ 118 BrakeSnData_5: 8 ABS_ESC
+ SG_ BrkCtrFnd_B_Stat : 39|1@0+ (1,0) [0|1] "SED" GWM
+ SG_ AwdLck_Tq_RqMx : 35|12@0+ (1,0) [0|4095] "Nm" GWM,TCCM
+ SG_ AwdLck_Tq_RqMn : 51|12@0+ (1,0) [0|4095] "Nm" GWM,TCCM
+ SG_ DrvSte_D_Stat : 19|4@0+ (1,0) [0|15] "SED" PSCM,GWM
+ SG_ DrvSte_Tq_Rq : 31|8@0+ (0.0625,-8) [-8|7.8125] "Nm" PSCM,GWM
+ SG_ EmgcyBrkLamp_D_Rq : 21|2@0+ (1,0) [0|3] "SED" GWM
+ SG_ StopLamp_B_RqBrk : 7|1@0+ (1,0) [0|1] "SED" GWM
+ SG_ SteWhlRelInit_An_Sns : 6|15@0+ (0.1,-1600) [0|0] "deg" PSCM,GWM
+ SG_ DS_Filler_1 : 23|2@0+ (1,0) [0|3] "SED" GWM
+ SG_ DS_Filler_2 : 38|3@0+ (1,0) [0|7] "SED" GWM
+ SG_ DS_Filler_3 : 55|4@0+ (1,0) [0|15] "SED" GWM
  
 BO_ 119 BrakeSnData_3: 8 ABS_ESC
  SG_ VehOverGnd_V_Est : 7|16@0+ (0.01,0) [0|655.33] "kph"  VDM,IPMA_ADAS,TCCM,PSCM,GWM
