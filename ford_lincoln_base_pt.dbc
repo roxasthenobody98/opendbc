@@ -93,7 +93,7 @@ BO_ 131 Steering_Buttons: 8 GWM
  SG_ Main : 38|1@0+ (1,0) [0|1] "SED"  ECM_Diesel,IPMA_ADAS,PCM,PCM_HEV
  
 BO_ 133 EPS_SAS: 8 PSCM
- SG_ SAS : 6|15@0- (0.1,71.60) [0|32767] "deg" GWM,IPMA_ADAS,ABS_ESC
+ SG_ SAS : 6|15@0- (0.1,65.80) [0|32767] "deg" GWM,IPMA_ADAS,ABS_ESC
  
 BO_ 145 Yaw_Data: 8 GWM
  SG_ VehYawWActl_D_Qf : 53|2@0+ (1,0) [0|3] "SED"  VDM,IPMA_ADAS,ABS_ESC
